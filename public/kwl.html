@@ -688,7 +688,7 @@ fetch('/media/kwl-radio.mp3',{method:'HEAD'}).then(r=>{if(!r.ok||!/audio/.test(r
 $('#radioBtn').onclick=()=>{
   if(auOK){
     if(!au.paused){au.pause();$('#radioBtn').textContent='▶ play';$('#radioTxt').textContent='paused. rude.';return}
-    au.play().then(()=>{$('#radioBtn').textContent='❚❚ stop';$('#radioTxt').textContent='now playing on KWL radio'}).catch(()=>{auOK=false;$('#radioBtn').click()});
+    au.play().then(()=>{$('#radioBtn').textContent='❚❚ stop';$('#radioTxt').textContent='now playing: yandhi'}).catch(()=>{auOK=false;$('#radioBtn').click()});
     return}
   if(rt){clearInterval(rt);rt=null;$('#radioBtn').textContent='▶ play';$('#radioTxt').textContent='paused. rude.';return}
   try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();ac.resume()}catch(e){$('#radioTxt').textContent='no sound here. sorry.';return}
